@@ -1,0 +1,136 @@
+   *{
+    margin: 0;
+    padding: 0;
+    }
+
+    html, body{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;  
+    }
+
+    @font-face {
+        font-family: basiic;
+        src: url(fonts/basiic.ttf);
+    }
+
+    main{
+        margin: 30px;
+        background-color: #ffffff;
+        width: 85vw;
+        border-radius: 20px;
+        border-style: dashed;
+        border-color: #f3a4c2;
+    }
+
+    main h2{
+        font-family: basiic;
+        color: #999999;
+        text-align: center;
+    }
+
+    main h3{
+        font-family: basiic;
+        color: #b1b1b1;
+        text-align: center;
+    }
+
+    h1{
+        font-family: Concert One;
+        font-size: 5em;
+        color: #f3a4c2;
+        text-shadow: 4px 4px #ffecfa;
+    }
+
+    main p{
+        font-family: basiic;
+        color: #999999;
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    nav{
+        margin-top: 20px;
+        border-radius: 20px;
+        height: 50px;
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        background-color: #f3a4c2;
+    }
+
+    ul{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style-type: none;
+        font-family: Concert One;
+        font-size: 1.2em;
+    }
+
+    nav ul li a{
+        text-decoration-line: none;
+        color: white;
+    }
+
+    nav ul li a:hover{
+        color: #dd7387;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .smallbox1{
+        background-color: #f3a4c2;
+        width: 40vw;
+        border-radius: 15px;
+        border: 2px solid #f3a4c2;
+        margin-left: 26%;
+    }
+
+    .smallbox2{
+        background-color: #f3a4c2;
+        width: 40vw;
+        border-radius: 15px;
+        border: 2px solid #f3a4c2;
+        margin-left: 26%;
+    }
+
+    main div p{
+        font-family: Concert One;
+        color: white;
+        font-size: 1.2em;
+    }
+
+    .container{
+        padding: 20px 0;
+        color: #d67399;
+        font-family: basiic;
+    }
+
+    button{
+        font-family: Concert One;
+        background-color: #fac2cb;
+        color: white;
+        border-radius: 5px;
+        border-color: #dd7387;
+        font-size: 1em;
+    }
+
+    .button1{
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .button2{
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }

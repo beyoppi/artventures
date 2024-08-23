@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=New+Amsterdam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Register | Artventures</title>
+</head>
+<style>
+    main{
+        font-family: basiic;
+    }
+
+    input[type=text]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit]{
+        width: 100%;
+        background-color: #dd7387;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-family: basiic;
+        font-size: 1em;
+    }
+
+    .formcontainer {
+        border-radius: 5px;
+        background-color: #fde9ec;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    main h2{
+        margin: 10px;
+    }
+
+    main h3{
+        margin: 10px;
+    }
+</style>
+<body background="images/background.png">
+    <!-- HEADER -->
+    <h1 style="display: block;">Artventures</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN BODY -->
+    <div>
+    <main>
+        <br><br><br>
+        <h2 style="color: #f8acb9;">Artventures Membership Registration</h2>
+        <h3 style="color: #fac2cb;">complete the form to sign up</h3>
+        <br><br>
+        <hr>
+            <div class="formcontainer">
+                <form>
+
+                    <br>
+                    <label for="fname">Full Name</label>
+                    <input type="text" id="fname" placeholder="ex. Juan A. Dela Cruz" required>
+                    <br>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="your username here" required>
+                    <br>
+                    <label for="psw">Password</label>
+                    <input type="text" id="psw" placeholder="your password here" required>
+                    <br>
+                    <label for="insti">Institutional Email</label>
+                    <input type="text" id="insti" placeholder="ex. 2024-123456@rtu.edu.ph" pattern="[0-9]{4}-[0-9]{6}@rtu.edu.ph" required>
+                    <br>
+                    <label for="date">Date of Registration</label>
+                    <input type="date" id="date" required>
+
+                    <input type="submit" value="Submit">
+                    <br><br>
+
+                </form>
+            </div>
+        <hr>
+        <br><br><br>
+        <h3 style="color: #fac2cb;">Please wait for confirmation to be sent to your email account. Until then, we hope to see you on our future club activities!</h3>
+        <br><br><br>
+    </main>
+    </div>
+
+    <!-- FOOTER -->
+     <footer>
+        <div class="container">
+            <p>&copy; 2024 CEIT-37-304P | Designed by Amber Deirdre M. Andrade</p>
+        </div>
+     </footer>
+</body>
+</html>

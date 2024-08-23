@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=New+Amsterdam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Contact | Artventures</title>
+</head>
+<style>
+    main{
+        font-family: basiic;
+    }
+
+    input[type=text], textarea{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit]{
+        width: 100%;
+        background-color: #dd7387;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: basiic;
+        font-size: 1em;
+    }
+
+    .formcontainer {
+        border-radius: 5px;
+        background-color: #e7f7fc;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<body background="images/background.png">
+    <!-- HEADER -->
+    <h1 style="display: block;">Artventures</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN BODY -->
+    <div>
+    <main>
+        <br><br><br>
+        <h2 style="color: #f8acb9;">Contact Us</h2>
+        <h3 style="color: #fac2cb;">for any questions, feel free to submit one through our contact form</h3>
+        <br><br>
+        <hr>
+        <div class="formcontainer">
+            <form>
+
+                <br>
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" placeholder="your first name here" required>
+                <br><br>
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" placeholder="your last name here" required>
+                <br><br>
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="ex. @gmail.com / @yahoo.com" required>
+                <br><br>
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Let us know.." style="height:150px" required></textarea>
+                <br><br>
+                <input type="submit" value="Submit">
+                <br><br>
+
+            </form>
+        </div>
+        <hr>
+        <br><br><br>
+        <h3 style="color: #fac2cb;">Please wait for our response within 2 business days. Be sure to enter the correct email address.</h3>
+        <br><br><br>
+    </main>
+    </div>
+
+    <!-- FOOTER -->
+     <footer>
+        <div class="container">
+            <p>&copy; 2024 CEIT-37-304P | Designed by Amber Deirdre M. Andrade</p>
+        </div>
+     </footer>
+</body>
+</html>
