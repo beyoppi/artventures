@@ -1,6 +1,7 @@
    *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     }
 
     html, body{
@@ -74,12 +75,12 @@
     nav ul li a{
         text-decoration-line: none;
         color: white;
+        transition: all 0.3s ease-in-out;
     }
 
     nav ul li a:hover{
         color: #dd7387;
         cursor: pointer;
-        transition: color 0.3s ease-in-out;
     }
 
     .smallbox1{
@@ -106,6 +107,8 @@
 
     .container{
         padding: 20px 0;
+        margin-left: 10px;
+        margin-right: 10px;
         color: #d67399;
         font-family: basiic;
     }
