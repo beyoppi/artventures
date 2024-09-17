@@ -11,48 +11,101 @@
     <title>Register | Artventures</title>
 </head>
 <style>
-    main{
-        font-family: basiic;
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
 
-    input[type=text]{
+    html{
+        font-family: basiic;
+        font-size: 12pt;
+        text-align: center;
+    }
+
+    body{
+        min-height: 100vh;
+    }
+
+    .registration-info {
+    padding: 0 20px;
+    }
+
+    .formcontainer{
+        background-color: #fae2e6;
+        box-sizing: border-box;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form{
+        width: min(400px, 100%);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label{
+        display: flex;
+        align-self: flex-start;
+    }
+
+    .input-control {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .input-control input{
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
-        display: block;
-        border: none;
+        border: 2px solid #ffffff;
         border-radius: 10px;
         box-sizing: border-box;
     }
 
-    input[type=submit]{
+    .input-control input:focus {
+        outline: 0;
+    }
+
+    .input-control .error {
+        color: #ff3860;
+        font-size: 13px;
+        height: 13px;
+    }
+
+    .input-control.success input {
+        border-color: #09c372;
+    }
+
+    .input-control.error input {
+        border-color: #ff3860;
+    }
+
+    button{
         width: 100%;
         background-color: #dd7387;
         color: white;
+        margin-top: 10px;
         padding: 10px 20px;
         border: none;
         border-radius: 20px;
         cursor: pointer;
-        margin-top: 20px;
         font-family: basiic;
         font-size: 1em;
+        transition: all 200ms ease-in-out;
     }
 
-    .formcontainer {
-        border-radius: 5px;
-        background-color: #fde9ec;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
+    button:hover{
+        background-color: #f3b2be;
     }
 
-    main h2{
-        margin: 10px;
-    }
-
-    main h3{
-        margin: 10px;
-    }
 </style>
 <body background="images/background.png">
     <!-- HEADER -->
@@ -70,46 +123,155 @@
     <div>
     <main>
         <br><br><br>
+        <div class="registration-info">
         <h2 style="color: #f8acb9;">Artventures Membership Registration</h2>
-        <h3 style="color: #fac2cb;">complete the form to sign up</h3>
+        <h3 style="color: #fac2cb;">Complete the form to sign up</h3>
+        </div>
         <br><br>
         <hr>
             <div class="formcontainer">
-                <form>
+                <form id="form">
 
-                    <br>
-                    <label for="fname">Full Name</label>
-                    <input type="text" id="fname" placeholder="ex. Juan A. Dela Cruz" required>
-                    <br>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="your username here" required>
-                    <br>
-                    <label for="psw">Password</label>
-                    <input type="text" id="psw" placeholder="your password here" required>
-                    <br>
-                    <label for="insti">Institutional Email</label>
-                    <input type="text" id="insti" placeholder="ex. 2024-123456@rtu.edu.ph" pattern="[0-9]{4}-[0-9]{6}@rtu.edu.ph" required>
-                    <br>
-                    <label for="date">Date of Birth</label>
-                    <input type="date" id="date" required>
+                    <div class="input-control">
+                        <label for="fname">Full Name</label>
+                        <input type="text" name="fullname" id="fname" placeholder="ex. Juan A. Dela Cruz" title="Required field">
+                        <div class="error"></div>
+                    </div>
 
-                    <input type="submit" value="Submit">
-                    <br><br>
+                    <div class="input-control">
+                        <label for="uname">Username</label>
+                        <input type="text" name="username" id="uname" placeholder="Maximum 15 characters" title="Maximum 15 characters">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-control">
+                        <label for="psw">Password</label>
+                        <input type="password" name="password" id="psw" placeholder="Password must be 6 characters long" title="Must be at least 6 characters long">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-control">
+                        <label for="insti">Institutional Email</label>
+                        <input type="text" name="email" id="insti" placeholder="ex. 2024-123456@rtu.edu.ph" title="Must be valid RTU institutional email">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-control">
+                        <label for="date">Date of Birth</label>
+                        <input type="date" name="birthdate" id="date">
+                        <div class="error"></div>
+                    </div>
+                    <button id="submitButton">Submit</button>
 
                 </form>
             </div>
         <hr>
         <br><br><br>
+        <div class="registration-info">
         <h3 style="color: #fac2cb;">Please wait for confirmation to be sent to your email account. Until then, we hope to see you on our future club activities!</h3>
+        </div>
         <br><br><br>
     </main>
     </div>
 
     <!-- FOOTER -->
-     <footer>
+    <footer>
         <div class="container">
             <p>&copy; 2024 CEIT-37-304P | Designed by Amber Deirdre M. Andrade</p>
         </div>
-     </footer>
+    </footer>
+
+    <!-- Script -->
+    <script>
+    document.getElementById("submitButton").onclick = function(event) {
+        event.preventDefault();
+
+        const fullName = document.getElementById("fname").value.trim();
+        const userName = document.getElementById("uname").value.trim();
+        const passWord = document.getElementById("psw").value.trim();
+        const instiEmail = document.getElementById("insti").value.trim();
+        const dateOfBirth = document.getElementById("date").value;
+
+        const emailPattern = /^[0-9]{4}-[0-9]{6}@rtu.edu.ph$/;
+
+        clearMessages();
+
+        let isFormValid = true;
+
+        if (fullName === "") {
+            showError("fname", "Full Name is required.");
+            isFormValid = false;
+        } else {
+            showSuccess("fname");
+        }
+
+        if (userName === "") {
+            showError("uname", "Username is required.");
+            isFormValid = false;
+        } else if (userName.length > 15) {
+            showError("uname", "Username cannot be longer than 15 characters.");
+            isFormValid = false;
+        } else {
+            showSuccess("uname");
+        }
+
+        if (passWord === "") {
+            showError("psw", "Password is required.");
+            isFormValid = false;
+        } else if (passWord.length < 6) {
+            showError("psw", "Password must be at least 6 characters.");
+            isFormValid = false;
+        } else {
+            showSuccess("psw");
+        }
+
+        if (instiEmail === "") {
+            showError("insti", "Email is required.");
+            isFormValid = false;
+        } else if (!emailPattern.test(instiEmail)) {
+            showError("insti", "Email must follow the format 2024-123456@rtu.edu.ph");
+            isFormValid = false;
+        } else {
+            showSuccess("insti");
+        }
+
+        if (dateOfBirth === "") {
+            showError("date", "Date of Birth is required.");
+            isFormValid = false;
+        } else {
+            showSuccess("date");
+        }
+
+        if (isFormValid) {
+            alert("Registration successful!");
+            document.getElementById("form").submit();
+        } else {
+            alert("One or more input(s) are missing.")
+        }
+    }
+
+    function showError(inputId, message) {
+        const inputElement = document.getElementById(inputId);
+        const errorElement = inputElement.nextElementSibling;
+        inputElement.style.borderColor = "#ff3860";
+        errorElement.innerText = message;
+        }
+
+    function showSuccess(inputId) {
+        const inputElement = document.getElementById(inputId);
+        inputElement.style.borderColor = "#09c372";
+        const errorElement = inputElement.nextElementSibling;
+        errorElement.innerText = "";
+    }
+
+    function clearMessages() {
+        const inputs = document.querySelectorAll("input");
+        inputs.forEach(input => {
+            input.style.borderColor = "";
+            const errorElement = input.nextElementSibling;
+            errorElement.innerText = "";
+        });
+    }
+    </script>
 </body>
 </html>
