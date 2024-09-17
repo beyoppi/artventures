@@ -11,11 +11,53 @@
     <title>Contact | Artventures</title>
 </head>
 <style>
-    main{
-        font-family: basiic;
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
 
-    input[type=text], textarea{
+    html{
+        font-family: basiic;
+        font-size: 12pt;
+        text-align: center;
+    }
+
+    body{
+        min-height: 100vh;
+    }
+
+    .registration-info {
+    padding: 0 20px;
+    }
+
+    .formcontainer{
+        background-color: #e7f7fc;
+        box-sizing: border-box;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form{
+        width: min(400px, 100%);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label{
+        display: flex;
+        align-self: flex-start;
+        padding: 5px;
+    }
+
+    input{
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -24,7 +66,20 @@
         box-sizing: border-box;
     }
 
-    input[type=submit]{
+    textarea{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+        min-width: 300px;
+        max-width: 500px;
+        min-height: 150px;
+        max-height: 300px;
+    }
+
+    button{
         width: 100%;
         background-color: #dd7387;
         color: white;
@@ -34,14 +89,11 @@
         cursor: pointer;
         font-family: basiic;
         font-size: 1em;
+        transition: all 200ms ease-in-out;
     }
 
-    .formcontainer {
-        border-radius: 5px;
-        background-color: #e7f7fc;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
+    button:hover{
+        background-color: #f3b2be;
     }
 </style>
 <body background="images/background.png">
@@ -60,43 +112,52 @@
     <div>
     <main>
         <br><br><br>
+        <div class="registration-info">
         <h2 style="color: #f8acb9;">Contact Us</h2>
         <h3 style="color: #fac2cb;">for any questions, feel free to submit one through our contact form</h3>
+        </div>
         <br><br>
         <hr>
         <div class="formcontainer">
-            <form>
+            <form onsubmit="return showAlert()">
 
-                <br>
                 <label for="firstname">First Name</label>
                 <input type="text" id="firstname" placeholder="your first name here" required>
-                <br><br>
+                
                 <label for="lastname">Last Name</label>
                 <input type="text" id="lastname" placeholder="your last name here" required>
-                <br><br>
+                
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="ex. @gmail.com / @yahoo.com" required>
-                <br><br>
+                <input type="email" id="email" placeholder="ex. @gmail.com / @yahoo.com" required>
+                
                 <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Let us know.." style="height:150px" required></textarea>
-                <br><br>
-                <input type="submit" value="Submit">
-                <br><br>
+                <textarea id="subject" name="subject" maxlength="1000" placeholder="Let us know.." style="height:150px" required></textarea>
+                
+                <button>Submit</button>
 
             </form>
         </div>
         <hr>
         <br><br><br>
+        <div class="registration-info">
         <h3 style="color: #fac2cb;">Please wait for our response within 2 business days. Be sure to enter the correct email address.</h3>
+        </div>
         <br><br><br>
     </main>
     </div>
 
     <!-- FOOTER -->
-     <footer>
+    <footer>
         <div class="container">
             <p>&copy; 2024 CEIT-37-304P | Designed by Amber Deirdre M. Andrade</p>
         </div>
-     </footer>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function showAlert() {
+            alert("Successfully sent!");
+        }
+    </script>
 </body>
 </html>
